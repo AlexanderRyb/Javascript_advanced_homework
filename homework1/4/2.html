@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class MyString {
+        constructor(string) {
+          this.string = string;
+        }
+
+        reverse() {
+          const splitString = this.string.split("");
+          const reverseArray = splitString.reverse();
+          return reverseArray.join("");
+        }
+        ucFirst() {
+          const array =
+            this.string.charAt(0).toUpperCase() + this.string.slice(1);
+          return array;
+        }
+        ucWords() {
+          const splitArray = this.string.split(" ");
+          for (let i = 0; i < splitArray.length; i++) {
+            splitArray[i] =
+              splitArray[i][0].toUpperCase() + splitArray[i].substr(1);
+          }
+          return splitArray.join(" ");
+        }
+      }
+      const myString = new MyString("a b c f d d h");
+      console.log(myString.ucWords());
+    </script>
+  </body>
+</html>

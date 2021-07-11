@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Worker {
+        constructor(firstName, secondName, rate, days) {
+          this.firstName = firstName;
+          this.secondName = secondName;
+          this.rate = rate;
+          this.days = days;
+        }
+        getSalary() {
+          return this.rate * this.days;
+        }
+      }
+      const worker = new Worker("Ivan", "Ivanov", 10, 31);
+      const secondworker = new Worker("Petro", "Ivanko", 12, 27);
+
+      console.log(worker.getSalary() + secondworker.getSalary());
+    </script>
+  </body>
+</html>
