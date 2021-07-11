@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function CoffeeMake() {}
+      CoffeeMake.mykey = "custom property";
+      console.log(CoffeeMake.prototype);
+      CoffeeMake.prototype.on = () => {
+        console.log("кавоварка включена");
+      };
+      CoffeeMake.prototype.off = () => {
+        console.log("кавоварка вимкнена");
+      };
+      function Coffee1() {}
+      Coffee1.prototype.type = () => {
+        console.log("капельна");
+      };
+      Coffee1.__proto__ = CoffeeMake;
+      //
+      function Coffee2() {}
+      Coffee2.prototype.type = () => {
+        console.log("ріжкова");
+      };
+      Coffee2.__proto__ = CoffeeMake;
+      //
+
+      function Coffee3() {}
+      Coffee3.prototype.type = () => {
+        console.log("каво-машина");
+      };
+      Coffee3.__proto__ = CoffeeMake;
+    </script>
+  </body>
+</html>
